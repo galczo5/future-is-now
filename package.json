@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Demo app for \"Future is now\"",
   "scripts": {
-    "node:clear": "",
+    "node:clear": "rm -rf ./src/node/*.js",
     "node:generate": "node ./generator/node.generator.js",
     "node:webpack:build": "webpack -c ./config/node.webpack.config.js",
-    "node:webpack:test": "node ./dist/node-webpack/main.js"
+    "node:webpack:test": "node ./dist/node-webpack/main.js",
+    "node:esbuild:build": "node ./config/node.esbuild.js",
+    "node:esbuild:test": "node ./dist/node-esbuild/main.js"
   },
   "author": "galczo5",
   "license": "MIT",
