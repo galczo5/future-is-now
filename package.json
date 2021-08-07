@@ -1,0 +1,35 @@
+{
+  "name": "future-is-now",
+  "version": "1.0.0",
+  "description": "Demo app for \"Future is now\"",
+  "scripts": {
+    "node:clear": "",
+    "node:generate": "node ./generator/node.generator.js",
+    "node:webpack:build": "webpack -c ./config/node.webpack.config.js",
+    "node:webpack:test": "node ./dist/node-webpack/main.js"
+  },
+  "author": "galczo5",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-react-constant-elements": "^7.14.5",
+    "@babel/plugin-transform-react-inline-elements": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "commander": "^8.1.0",
+    "esbuild": "^0.12.18",
+    "terser-webpack-plugin": "^5.1.4",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
