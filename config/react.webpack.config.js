@@ -4,9 +4,10 @@ const TerserWebpackPlugin = require("terser-webpack-plugin");
 module.exports = function() {
   return {
     devtool: false,
-    entry: "./react/main.js",
+    entry: "./src/react/main.jsx",
+    mode: "production",
     output: {
-      path: path.resolve(__dirname, "dist/react-webpack"),
+      path: path.resolve(__dirname, "../dist/react-webpack"),
       publicPath: "/"
     },
     module: {
@@ -19,7 +20,8 @@ module.exports = function() {
             options: {
               cacheDirectory: true,
               cacheCompression: false,
-              envName: "production"
+              envName: "production",
+              presets: ["@babel/preset-env", "@babel/preset-react"]
             }
           }
         },
