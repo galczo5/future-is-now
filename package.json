@@ -5,6 +5,7 @@
   "scripts": {
     "clear": "npm run node:clear && npm run react:clear",
     "compare": "npm run node:compare -- --headless --header 'COMPARE NODE BUILDS' && npm run react:compare -- --headless --header 'COMPARE REACT BUILDS'",
+    "diagram": "node ./diagram-data.js",
     "node:clear": "rm -rf ./src/node/*.js",
     "node:generate": "node ./generator/node.generator.js",
     "node:webpack:build": "webpack -c ./config/node.webpack.config.js",
