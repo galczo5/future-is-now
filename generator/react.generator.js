@@ -40,6 +40,7 @@ program
     .requiredOption('-c <count>', 'number of components to generate')
     .parse(process.argv);
 
+let counter = 0;
 const modulesCount = Number(program.opts()['c']);
 for (let i = 0; i < modulesCount; i++) {
     app = app.replace(
@@ -52,7 +53,9 @@ for (let i = 0; i < modulesCount; i++) {
         `<Component${i}/>\n    //execution`
     );
 
-    writeFileSync(`./src/react/Component${i}.jsx`, component(i));
+    const fileContent = component(i);
+    writeFileSync(`./src/react/Component${i}.jsx`, fileContent);
+    counter += fileContent.split('\n').length;
     console.log('generated', `./src/react/module${i}.jsx`);
 }
 
@@ -60,6 +63,11 @@ app = app.replace('//execution', '');
 
 writeFileSync('./src/react/main.jsx', main);
 console.log('saved', `./src/react/main.jsx`);
+counter += main.split('\n').length;
+
 
 writeFileSync('./src/react/App.jsx', app);
 console.log('saved', `./src/react/App.jsx`);
+counter += app.split('\n').length;
+
+console.log('Generated', counter, 'LOC');
