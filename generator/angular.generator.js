@@ -56,13 +56,18 @@ let counter = 0;
 const modulesCount = Number(program.opts()['c']);
 for (let i = 0; i < modulesCount; i++) {
     main = main.replace(
-        '//imports',
-        `import Component${i} from './Component${i}';\n//imports`
+        '// imports',
+        `import { Component${i} } from './components/Component${i}';\n// imports`
+    );
+
+    main = main.replace(
+        '// components',
+        `Component${i},\n// components`
     );
 
     app = app.replace(
         '// template',
-        `<app-component-${i}/>\n//template`
+        `<app-component-${i}></app-component-${i}>\n//template`
     );
 
     const fileContent = component(i);

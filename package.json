@@ -19,7 +19,8 @@
     "react:webpack:test": "http-server -p 4200 -o /index.webpack.html -c-1",
     "react:esbuild:build": "node ./config/react.esbuild.js",
     "react:esbuild:test": "http-server -p 4200 -o /index.esbuild.html -c-1",
-    "react:compare": "node ./time.js --webpack 'npm run react:webpack:build' --esbuild 'npm run react:esbuild:build'"
+    "react:compare": "node ./time.js --webpack 'npm run react:webpack:build' --esbuild 'npm run react:esbuild:build'",
+    "angular:generate": "node ./generator/angular.generator.js"
   },
   "author": "galczo5",
   "license": "MIT",
